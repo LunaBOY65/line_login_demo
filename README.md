@@ -1,16 +1,22 @@
-# line_login_demo
+# Flutter LINE Login Demo
 
-A new Flutter project.
+A simple Flutter project demonstrating the basic implementation of LINE Login.
 
-## Getting Started
+## 🔧 Summary
 
-This project is a starting point for a Flutter application.
+To integrate LINE Login, the following files were modified:
 
-A few resources to get you started if this is your first Flutter project:
+### [pubspec.yaml](pubspec.yaml)
+* Adds the `flutter_line_sdk` package as a dependency to the project.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### [lib/main.dart](lib/main.dart)
+* Contains all the application logic. It initializes the LINE SDK with a Channel ID, handles the `login()` and `logout()` API calls, and displays the user's profile information on the screen.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### [android/app/build.gradle.kts](android/app/build.gradle.kts)
+*  Sets the minimum Android SDK version required by the LINE SDK (e.g., `minSdkVersion(24)`).
+
+### [android/app/src/main/AndroidManifest.xml](android/app/src/main/AndroidManifest.xml)
+* Declares the specific `Activity` that the LINE SDK uses to present the login screen to the user.
+
+### [ios/Runner/Info.plist](ios/Runner/Info.plist)
+* Configures the custom URL scheme required for the LINE app to redirect back to this application after a successful login.
